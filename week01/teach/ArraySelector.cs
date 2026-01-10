@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 public static class ArraySelector
 {
     public static void Run()
@@ -11,6 +13,23 @@ public static class ArraySelector
 
     private static int[] ListSelector(int[] list1, int[] list2, int[] select)
     {
-        return [];
+        int indice1 = 0;
+        int indice2 = 0;
+        List<int> resultado = new();
+        for ( int i=0; i < select.Length; i++ )
+        {
+            int valor = select[i];
+            if (valor == 1)
+            {
+                resultado.Add(list1[indice1]);
+                indice1++;
+            } 
+            else
+            {
+                resultado.Add(list2[indice2]);
+                indice2++;
+            }
+        }
+        return resultado.ToArray();
     }
 }
