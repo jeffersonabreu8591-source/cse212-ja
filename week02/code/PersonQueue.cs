@@ -12,16 +12,23 @@ public class PersonQueue
     /// </summary>
     /// <param name="person">The person to add</param>
     public void Enqueue(Person person)
-    {
-        _queue.Insert(0, person);
-    }
+{
+    //_queue.Insert(0, person);this was adding at the beggining of the list
 
-    public Person Dequeue()
-    {
-        var person = _queue[0];
-        _queue.RemoveAt(0);
-        return person;
-    }
+    // Ad to the back of the queue (FIFO)
+    _queue.Add(person);
+}
+
+public Person Dequeue()
+{
+    //_queue.RemoveAt(0);
+
+    // Remove from the Front of the queue
+    var person = _queue[0];
+    _queue.RemoveAt(0);
+    return person;
+}
+
 
     public bool IsEmpty()
     {

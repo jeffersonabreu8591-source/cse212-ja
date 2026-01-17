@@ -13,6 +13,7 @@ public class CustomerService {
         // Test 1
         // Scenario: 
         // Expected Result: 
+        var cs1 = new CustomerService(0);
         Console.WriteLine("Test 1");
 
         // Defect(s) Found: 
@@ -21,7 +22,7 @@ public class CustomerService {
 
         // Test 2
         // Scenario: 
-        // Expected Result: 
+        // Expected Result: condition allows adding customer when queue is full
         Console.WriteLine("Test 2");
 
         // Defect(s) Found: 
