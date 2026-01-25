@@ -33,6 +33,16 @@ public class Maze
     public void MoveLeft()
     {
         // FILL IN CODE
+
+        //the pattern to put in mind is: knows where you are (_currX, _currY), identify on the 
+        // dictionary to know if that direction is allowed, 
+        // if it is false throw exception, if it is true update x OR y 
+        var directions = _mazeMap[(_currX, _currY)];
+
+    if (!directions[0])
+        throw new InvalidOperationException("Can't go that way!");
+
+    _currX--;
     }
 
     /// <summary>
@@ -42,6 +52,13 @@ public class Maze
     public void MoveRight()
     {
         // FILL IN CODE
+
+        var directions = _mazeMap[(_currX, _currY)];
+
+    if (!directions[1])
+        throw new InvalidOperationException("Can't go that way!");
+
+    _currX++;
     }
 
     /// <summary>
@@ -51,6 +68,12 @@ public class Maze
     public void MoveUp()
     {
         // FILL IN CODE
+        var directions = _mazeMap[(_currX, _currY)];
+
+    if (!directions[2])
+        throw new InvalidOperationException("Can't go that way!");
+
+    _currY--; //in this map go up means subtract Y
     }
 
     /// <summary>
@@ -60,6 +83,12 @@ public class Maze
     public void MoveDown()
     {
         // FILL IN CODE
+          var directions = _mazeMap[(_currX, _currY)];
+
+    if (!directions[3])
+        throw new InvalidOperationException("Can't go that way!");
+
+    _currY++;
     }
 
     public string GetStatus()
